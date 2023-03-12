@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tp-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,6 +9,11 @@
     <script src="./src/index.js" defer></script>
   </head>
   <body>
-    <div id="app">O meu nome é {{ name }}</div>
+    <form id="app-form">
+      <input type="text" v-model="input_name" placeholder="Digite seu nome" />
+      <input type="button" value="Enviar" v-on:click="submitForm()" />
+    </form>
+    <p id="app">O meu nome é {{ name }}</p>
+    <p>Binding: {{ input_name }}</p>
   </body>
 </html>
