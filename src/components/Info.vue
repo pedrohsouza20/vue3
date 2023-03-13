@@ -8,6 +8,9 @@
       <li>Angular</li>
       <li>Vue</li>
     </ul>
+    <div>
+      <button @click="showEmail">{{ textoBotao }}</button>
+    </div>
     <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
     <p>
       Para acessar meu portfolio,
@@ -24,10 +27,22 @@ export default {
   data() {
     return {
       esta_trabalhando: true,
-      mostrar_email: true,
+      mostrar_email: false,
       email: "email@dominio.com",
       meu_link: "https://www.google.com",
+      textoBotao: "Mostrar e-mail",
     };
+  },
+  methods: {
+    showEmail() {
+      this.mostrar_email = !this.mostrar_email;
+      if (!this.mostrar_email) {
+        this.textoBotao = "Mostrar e-mail";
+      } else {
+        this.textoBotao = "Esconder e-mail";
+      }
+      console.log("teste");
+    },
   },
   components: {
     Picture,
