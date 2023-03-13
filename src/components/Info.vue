@@ -9,10 +9,16 @@
       <li>Vue</li>
     </ul>
     <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
+    <p>
+      Para acessar meu portfolio,
+      <a v-bind:href="meu_link">basta clickar aqui</a>
+    </p>
+    <Picture />
   </div>
 </template>
 
 <script>
+import Picture from "./Picture.vue";
 export default {
   name: "Info",
   data() {
@@ -20,7 +26,11 @@ export default {
       esta_trabalhando: true,
       mostrar_email: true,
       email: "email@dominio.com",
+      meu_link: "https://www.google.com",
     };
+  },
+  components: {
+    Picture,
   },
 };
 </script>
